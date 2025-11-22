@@ -1,0 +1,32 @@
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+.next/
+.vercel/
+coverage/
+
+# Environment
+.env*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Test
+*.tsbuildinfo
+*.log
+test-results/

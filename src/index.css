@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Tema padrão: branco neutro (modo claro) */
+  :root {
+    --background: 0 0% 100%; /* branco total */
+    --foreground: 222 47% 11%; /* cinza muito escuro para texto */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 90% 50%; /* azul vivo acessível */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 96%; /* cinza azulado muito claro */
+    --secondary-foreground: 222 47% 20%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 215 16% 40%;
+    --accent: 200 100% 48%; /* azul ciano leve para variação */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: 217 90% 50%;
+    --radius: 0.5rem;
+    --chart-1: 217 90% 50%;
+    --chart-2: 200 100% 48%;
+    --chart-3: 225 70% 60%;
+    --chart-4: 180 60% 45%;
+    --chart-5: 42 95% 55%;
+  }
+  /* Modo escuro neutro */
+  .dark {
+    --background: 222 22% 10%;
+    --foreground: 0 0% 98%;
+    --card: 222 25% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 25% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 15% 22%;
+    --muted-foreground: 220 10% 65%;
+    --accent: 200 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 22%;
+    --input: 222 20% 22%;
+    --ring: 217 90% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv03", "cv04", "cv11";
+  }
+}
+
+/* Utilitários de gradiente e efeitos baseados na paleta (neutros) */
+@layer components {
+  .brand-gradient {
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--primary) / 0.15),
+      hsl(var(--accent) / 0.12),
+      hsl(var(--primary) / 0.18)
+    );
+  }
+  .button-gradient {
+    background-image: linear-gradient(
+      90deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
+  }
+  .panel-gradient {
+    background-image: radial-gradient(
+      circle at 20% 20%,
+      hsl(var(--primary) / 0.25),
+      hsl(var(--accent) / 0.1) 55%,
+      hsl(var(--background)) 90%
+    );
+  }
+  .subtle-bg {
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--background)),
+      hsl(var(--background) / 0.92)
+    );
+  }
+}
